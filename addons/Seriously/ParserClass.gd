@@ -113,10 +113,10 @@ func TYPE_REAL_unpack(stream: StreamPeerBuffer) -> float:
 # String
 func TYPE_STRING_pack(value: String, stream: StreamPeerBuffer, add_type := true):
 	if add_type: stream.put_u8(TYPES.TYPE_STRING)
-	stream.put_u16(value.length())
-	stream.put_data(value.to_utf8())
+	# TODO: Find a better solution to parse strings. While this works, causes alot of overhead.
+	stream.put_utf8_string(value)
 func TYPE_STRING_unpack(stream: StreamPeerBuffer) -> String:
-	return stream.get_utf8_string(stream.get_u16())
+	return stream.get_utf8_string()
 
 # Rect2
 func TYPE_RECT2_pack(value: Rect2, stream: StreamPeerBuffer, add_type := true):
