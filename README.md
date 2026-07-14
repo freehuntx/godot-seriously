@@ -11,7 +11,7 @@ Plus you dont have the security issue of functions executing when you want to se
 ## API
 
 - Seriously
-  - pack_to_bytes (value): PoolByteArray
+  - pack_to_bytes (value): PackedByteArray
   - unpack_from_bytes (bytes: PackedByteArray)
   - pack (value): StreamPeerBuffer
   - unpack (stream: StreamPeerBuffer)
